@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overview - MedScope</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="app-shell" id="app-shell">
+    <!-- The sidebar is inserted here by js/app.js -->
+    <div id="nav-root"></div>
+
+    <main class="main" id="main-content">
+      <div class="content">
+        <noscript><p class="notice notice-error">This demo needs JavaScript to be turned on.</p></noscript>
+
+        <header class="page-header">
+          <h1>Overview</h1>
+          <p class="lead">
+            A student project that will later classify chest X-ray images as Normal or
+            Pneumonia using Python and a pretrained model. This version is the frontend
+            only: you can upload an image, preview it, change how it is displayed and
+            open a sample report.
+          </p>
+        </header>
+
+        <div class="notice notice-warn" role="note">
+          <strong>AI classification is not connected yet.</strong> This application does
+          not analyse images and shows no predictions or probabilities.
+        </div>
+
+        <p><a class="btn btn-large" href="upload.html">Upload an image</a></p>
+
+        <!-- Filled by js/app.js when there is progress to continue -->
+        <div id="continue-box"></div>
+
+        <section class="section" aria-labelledby="workflow-heading">
+          <h2 id="workflow-heading">Workflow</h2>
+          <ol class="steps">
+            <li>
+              <span class="step-number" aria-hidden="true">1</span>
+              <h3>Upload</h3>
+              <p>Choose a PNG or JPEG sample image. It stays in your browser.</p>
+            </li>
+            <li>
+              <span class="step-number" aria-hidden="true">2</span>
+              <h3>Analyze</h3>
+              <p>Adjust brightness, contrast and grayscale to view the image.</p>
+            </li>
+            <li>
+              <span class="step-number" aria-hidden="true">3</span>
+              <h3>Review</h3>
+              <p>Open the sample report and download it as a text file.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" aria-labelledby="status-heading">
+          <h2 id="status-heading">Project status</h2>
+          <div class="status-grid">
+            <div class="card">
+              <h3>Works now</h3>
+              <ul class="status-list">
+                <li>Demo sign-in and sign-up screens</li>
+                <li>PNG/JPEG upload with validation</li>
+                <li>Image preview and file details</li>
+                <li>Brightness, contrast, zoom and rotation display controls</li>
+                <li>Brightness histogram of the uploaded image</li>
+                <li>Sample report with text download</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Planned</h3>
+              <ul class="status-list">
+                <li>Python backend for image processing</li>
+                <li>Pretrained model for Normal vs. Pneumonia</li>
+                <li>Model evaluation and validation</li>
+                <li>Secure authentication on the backend</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

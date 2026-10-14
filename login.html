@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in - MedScope</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="login">
+  <main class="auth-page">
+    <div class="auth-card">
+
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">MI</span>
+        <span>
+          <span class="brand-name">MedScope</span>
+          <span class="brand-sub">Student project demo</span>
+        </span>
+      </div>
+
+      <h1>Sign in</h1>
+
+      <div class="notice notice-warn" role="note">
+        <strong>Demo screen only.</strong> This sign-in is not secure and does not
+        check your password. Real authentication will be built on a backend later.
+        Do not enter a password you use anywhere else.
+      </div>
+
+      <noscript><p class="notice notice-error">This demo needs JavaScript to be turned on.</p></noscript>
+
+      <form id="signin-form" novalidate>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email"
+                 aria-describedby="email-error">
+          <p class="field-error" id="email-error" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password"
+                 aria-describedby="password-error">
+          <p class="field-error" id="password-error" role="alert"></p>
+        </div>
+
+        <button type="submit" class="btn btn-block">Sign in</button>
+      </form>
+
+      <p class="auth-switch">No account yet? <a href="signup.html">Create a demo account</a></p>
+
+    </div>
+  </main>
+</body>
+</html>

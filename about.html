@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About - MedScope</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="app-shell" id="app-shell">
+    <!-- The sidebar is inserted here by js/app.js -->
+    <div id="nav-root"></div>
+
+    <main class="main" id="main-content">
+      <div class="content">
+        <noscript><p class="notice notice-error">This demo needs JavaScript to be turned on.</p></noscript>
+
+        <header class="page-header">
+          <h1>About this project</h1>
+          <p class="lead">What the project is for, what it can do today, and what it cannot do.</p>
+        </header>
+
+        <section class="card" aria-labelledby="objective-heading">
+          <h2 id="objective-heading">Project objective</h2>
+          <p>
+            This is a first mini project on medical image analysis. The goal is a
+            complete workflow (upload, analyze, review) for chest X-ray images, with
+            the long-term aim of a binary classification: Normal vs. Pneumonia.
+            This version builds only the user interface.
+          </p>
+        </section>
+
+        <section class="card" aria-labelledby="tech-heading">
+          <h2 id="tech-heading">Technologies used</h2>
+          <ul>
+            <li>HTML5 for the page structure</li>
+            <li>CSS3 for layout and styling (one shared stylesheet)</li>
+            <li>Vanilla JavaScript (one shared file), using the browser File API, sessionStorage and Blob downloads</li>
+            <li>No frameworks, no libraries and no build step</li>
+          </ul>
+        </section>
+
+        <section class="card" aria-labelledby="features-heading">
+          <h2 id="features-heading">Current features</h2>
+          <ul>
+            <li>Demo sign-in and sign-up screens with form validation</li>
+            <li>PNG and JPEG upload with type and size checks (2 MB limit)</li>
+            <li>Image preview with file name, type and size</li>
+            <li>Brightness, contrast, zoom and rotation display controls, plus a brightness histogram</li>
+            <li>Sample report page with a downloadable text file</li>
+            <li>Responsive layout for desktop, tablet and phone</li>
+          </ul>
+        </section>
+
+        <section class="card" aria-labelledby="limits-heading">
+          <h2 id="limits-heading">Current limitations</h2>
+          <ul>
+            <li><strong>No AI.</strong> Nothing here analyses an image or predicts a condition.</li>
+            <li><strong>No real security.</strong> The sign-in screens are a demo. Passwords are not checked or stored.</li>
+            <li>Display controls are browser CSS filters, not medical image enhancement.</li>
+            <li>The image is kept only in the current browser tab and is limited to small files.</li>
+            <li>The report is a sample layout and contains no findings.</li>
+            <li>Not a medical device. Not for diagnosis or clinical use.</li>
+          </ul>
+        </section>
+
+        <section class="card" aria-labelledby="python-heading">
+          <h2 id="python-heading">Future integration with Python</h2>
+          <p>
+            A Python backend (for example Flask or FastAPI) can receive the image from
+            this frontend, resize and normalise it with a library such as Pillow or
+            OpenCV, run the model and send the result back to the report page.
+            Real sign-in and account handling would also move to this backend.
+          </p>
+        </section>
+
+        <section class="card" aria-labelledby="model-heading">
+          <h2 id="model-heading">Possible pretrained model integration</h2>
+          <p>
+            A pretrained image-classification network could be adapted for the
+            Normal vs. Pneumonia task. Real classification will require an appropriate
+            labeled dataset, proper model evaluation on images the model has not seen,
+            and careful validation before any result is trusted or shown to users.
+          </p>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample report - MedScope</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="results">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="app-shell" id="app-shell">
+    <!-- The sidebar is inserted here by js/app.js -->
+    <div id="nav-root"></div>
+
+    <main class="main" id="main-content">
+      <div class="content">
+        <noscript><p class="notice notice-error">This demo needs JavaScript to be turned on.</p></noscript>
+
+        <header class="page-header">
+          <h1>Sample report</h1>
+          <p class="lead">A layout for how results could be presented once analysis is connected.</p>
+        </header>
+
+        <!-- Shown when no image has been uploaded yet -->
+        <div class="notice notice-info" id="results-empty" hidden>
+          <p><strong>No image selected.</strong> Upload an image first to see the sample report.</p>
+          <a class="btn" href="upload.html">Go to upload</a>
+        </div>
+
+        <!-- Shown when an image is available -->
+        <div id="results-content" hidden>
+          <article class="card">
+
+            <section class="report-section" aria-labelledby="report-image-heading">
+              <h2 id="report-image-heading">Image</h2>
+              <dl class="details">
+                <dt>File name</dt>
+                <dd id="result-filename"></dd>
+                <dt>Type</dt>
+                <dd id="result-type"></dd>
+                <dt>Size</dt>
+                <dd id="result-size"></dd>
+                <dt>Dimensions</dt>
+                <dd id="result-dimensions"></dd>
+              </dl>
+            </section>
+
+            <section class="report-section" aria-labelledby="report-status-heading">
+              <h2 id="report-status-heading">Workflow status</h2>
+              <dl class="details">
+                <dt>Upload</dt>
+                <dd><span class="badge badge-ok">Complete</span></dd>
+                <dt>Visual review</dt>
+                <dd id="result-review-status"></dd>
+                <dt>Classification</dt>
+                <dd><span class="badge">Not connected</span></dd>
+              </dl>
+            </section>
+
+            <section class="report-section" aria-labelledby="report-processing-heading">
+              <h2 id="report-processing-heading">Processing details</h2>
+              <dl class="details">
+                <dt>Display adjustments</dt>
+                <dd id="result-adjustments"></dd>
+                <dt>Server-side processing</dt>
+                <dd>None</dd>
+                <dt>AI model</dt>
+                <dd>None</dd>
+              </dl>
+            </section>
+
+            <section class="report-section" aria-labelledby="report-classification-heading">
+              <h2 id="report-classification-heading">Classification</h2>
+              <div class="classification-box">
+                <p class="classification-value">Not available yet</p>
+                <p class="muted">
+                  No model is connected, so this report contains no Normal or Pneumonia
+                  result and no probability.
+                </p>
+              </div>
+            </section>
+
+            <section class="report-section" aria-labelledby="report-future-heading">
+              <h2 id="report-future-heading">Future integration notes</h2>
+              <ul>
+                <li>A Python backend will receive the image and prepare it for a model.</li>
+                <li>A pretrained image-classification model may be adapted for Normal vs. Pneumonia.</li>
+                <li>This section will then show the model output, with its limits explained.</li>
+              </ul>
+            </section>
+
+            <section class="report-section" aria-labelledby="report-disclaimer-heading">
+              <h2 id="report-disclaimer-heading">Disclaimer</h2>
+              <p>
+                This is an educational demo. It does not analyse the image, does not detect
+                disease and must not be used for diagnosis or any medical decision.
+              </p>
+            </section>
+
+          </article>
+
+          <div class="button-row">
+            <button type="button" class="btn" id="download-report-button">Download demo report (.txt)</button>
+            <button type="button" class="btn btn-secondary" id="print-report-button">Print report</button>
+            <a class="btn btn-secondary" href="analysis.html">Back to analysis</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

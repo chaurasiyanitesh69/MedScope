@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image analysis - MedScope</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="analysis">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="app-shell" id="app-shell">
+    <!-- The sidebar is inserted here by js/app.js -->
+    <div id="nav-root"></div>
+
+    <main class="main" id="main-content">
+      <div class="content">
+        <noscript><p class="notice notice-error">This demo needs JavaScript to be turned on.</p></noscript>
+
+        <header class="page-header">
+          <h1>Image analysis</h1>
+          <p class="lead">View the selected image and change how it is displayed.</p>
+        </header>
+
+        <!-- Shown when no image has been uploaded yet -->
+        <div class="notice notice-info" id="analysis-empty" hidden>
+          <p><strong>No image selected.</strong> Upload an image first to use these controls.</p>
+          <a class="btn" href="upload.html">Go to upload</a>
+        </div>
+
+        <!-- Shown when an image is available -->
+        <div id="analysis-content" hidden>
+          <div class="notice notice-warn" role="note">
+            <strong>Display effects only.</strong> These controls use browser CSS filters to
+            change how the image looks on screen. They are not medical image enhancement
+            algorithms, they do not change the original file, and they do not detect disease.
+            No AI prediction is made.
+          </div>
+
+          <div class="two-column">
+            <div class="preview-frame">
+              <img id="analysis-image" alt="Selected image with the chosen display adjustments">
+            </div>
+
+            <section class="card" aria-labelledby="controls-heading">
+              <h2 id="controls-heading">Display controls</h2>
+
+              <div class="control">
+                <label class="control-label" for="brightness-slider">
+                  <span>Brightness</span>
+                  <output id="brightness-value" for="brightness-slider">100%</output>
+                </label>
+                <input type="range" id="brightness-slider" min="50" max="150" step="5" value="100">
+              </div>
+
+              <div class="control">
+                <label class="control-label" for="contrast-slider">
+                  <span>Contrast</span>
+                  <output id="contrast-value" for="contrast-slider">100%</output>
+                </label>
+                <input type="range" id="contrast-slider" min="50" max="150" step="5" value="100">
+              </div>
+
+              <div class="control">
+                <label class="checkbox-row" for="grayscale-checkbox">
+                  <input type="checkbox" id="grayscale-checkbox">
+                  <span>Grayscale preview</span>
+                </label>
+              </div>
+
+              <div class="control">
+                <label class="control-label" for="zoom-slider">
+                  <span>Zoom</span>
+                  <output id="zoom-value" for="zoom-slider">100%</output>
+                </label>
+                <input type="range" id="zoom-slider" min="50" max="200" step="10" value="100">
+              </div>
+
+              <div class="control">
+                <span class="control-label" id="rotate-label">Rotate</span>
+                <div class="button-row" role="group" aria-labelledby="rotate-label">
+                  <button type="button" class="btn btn-secondary" id="rotate-left-button">Rotate left</button>
+                  <button type="button" class="btn btn-secondary" id="rotate-right-button">Rotate right</button>
+                </div>
+              </div>
+
+              <div class="control">
+                <button type="button" class="btn btn-secondary btn-block" id="compare-button">Hold to compare original</button>
+              </div>
+
+              <div class="button-row">
+                <button type="button" class="btn btn-secondary" id="reset-button">Reset adjustments</button>
+                <a class="btn" href="results.html">Continue to report</a>
+              </div>
+            </section>
+          </div>
+
+          <section class="card" aria-labelledby="histogram-heading">
+            <h2 id="histogram-heading">Brightness distribution</h2>
+            <p class="muted">A simple count of dark to light pixels in the original image. It describes brightness only — it does not detect disease.</p>
+            <canvas id="histogram-canvas" width="280" height="130"></canvas>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

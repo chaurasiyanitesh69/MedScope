@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload image - MedScope</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="upload">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="app-shell" id="app-shell">
+    <!-- The sidebar is inserted here by js/app.js -->
+    <div id="nav-root"></div>
+
+    <main class="main" id="main-content">
+      <div class="content">
+        <noscript><p class="notice notice-error">This demo needs JavaScript to be turned on.</p></noscript>
+
+        <header class="page-header">
+          <h1>Upload image</h1>
+          <p class="lead">Choose a PNG or JPEG image to preview. Maximum size: 2 MB.</p>
+        </header>
+
+        <div class="notice notice-warn" role="note">
+          <strong>Privacy:</strong> please use sample or de-identified images only.
+          Do not upload images that could identify a real patient. The image is read
+          in your browser and is not sent to any server.
+        </div>
+
+        <!-- Messages (errors and confirmations) are written here by app.js -->
+        <div id="upload-message" class="notice" role="status" aria-live="polite" hidden></div>
+
+        <div class="drop-area" id="drop-area">
+          <p><strong>Drag an image here</strong> or choose one from your computer.</p>
+
+          <!-- The real file input is hidden; the button below opens it. -->
+          <input type="file" id="file-input" accept="image/png,image/jpeg" hidden>
+          <button type="button" class="btn" id="choose-button">Choose image</button>
+
+          <p class="field-hint">PNG or JPEG, one image at a time.</p>
+        </div>
+
+        <section class="card section" id="preview-panel" aria-labelledby="preview-heading" hidden>
+          <h2 id="preview-heading">Preview</h2>
+          <div class="two-column">
+            <div class="preview-frame">
+              <img id="preview-image" alt="Preview of the selected image">
+            </div>
+            <div>
+              <dl class="details">
+                <dt>File name</dt>
+                <dd id="file-name"></dd>
+                <dt>Type</dt>
+                <dd id="file-type"></dd>
+                <dt>Size</dt>
+                <dd id="file-size"></dd>
+                <dt>Dimensions</dt>
+                <dd id="file-dimensions"></dd>
+              </dl>
+              <div class="button-row">
+                <button type="button" class="btn btn-secondary" id="replace-button">Replace image</button>
+                <button type="button" class="btn btn-secondary" id="remove-button">Remove image</button>
+              </div>
+              <div class="button-row">
+                <a class="btn" href="analysis.html">Continue to analysis</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
